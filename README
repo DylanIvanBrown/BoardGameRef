@@ -1,0 +1,19 @@
+# Goals of Project
+- Answer user questions about board game rules
+
+# What You Need to Know to Use This Project
+You will need to provide your own keys/values for the following .env variables:
+- OPEN_API_KEY
+- DB_PASSWORD
+- DISCORD_KEY
+- DB_HOST
+- DB_USER
+- DB_NAME
+
+# Development Decisions
+- Currently, we are hosting on SparkedHost, but I'm open to changing this.
+
+# Feature Ideas
+- Once available, use OpenAI plugins tool to feed live data on BGG rankings, etc., from an API caller.
+- Bot game scoring from images once we have a model that can do that.
+- Custom open-source models that are trained on game rule books that are outside of the data set of Chat GPT-4.

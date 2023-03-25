@@ -6,10 +6,10 @@ async def update_db_with_new_messages(user_message, msg_intent, msg_game, bot_me
     db_password = os.environ.get("DB_PASSWORD")
 
     mydb = mysql.connector.connect(
-        host="db-eu-02.sparkedhost.us",
-        user="u89569_VpUOe4BqPF",
-        password=db_password,
-        database="s89569_conversations"
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_PASSWORD"),
+        password=os.environ.get("DB_USER"),
+        database=os.environ.get("DB_NAME")
     )
 
     cursor = mydb.cursor()
