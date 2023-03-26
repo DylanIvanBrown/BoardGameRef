@@ -31,7 +31,9 @@ async def on_message(message):
     # See PyCharm help at https://www.jetbrains.com/help/pycharm/
     openai.api_key = os.environ.get("OPEN_API_KEY")
     try:
-        bot_response = open_ai_caller.get_response(question)
+        context = await repo.get_context(message.author.id)
+
+        bot_response = open_ai_caller.get_response(question, context)
 
         await repo.update_db_with_message_and_response(message, bot_response)
 
