@@ -1,7 +1,7 @@
 class Context:
     """This is a class for tracking the context of the conversation, so we can better answer the users questions"""
 
-    def __int__(self, game: str, user_id: int, user_message: str):
+    def __init__(self, user_id: int, game: str, user_message: str):
         self.current_game = game
         self.last_user_message = user_message
         self.user_id = user_id

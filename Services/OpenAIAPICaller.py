@@ -43,7 +43,7 @@ class OpenAIAPICaller:
                     model=self.model,
                     messages=[
                         self.system_prompt,
-                        {"role": "user", "content": "We are talking about: " + context},
+                        {"role": "user", "content": "We are talking about: " + context.current_game},
                         {"role": "user", "content": question}
                     ]
                 )

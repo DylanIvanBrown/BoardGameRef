@@ -1,6 +1,9 @@
 import mysql.connector
 import os
 
+from Models.Context import Context
+
+
 class Repository:
 
     def __init__(self):
@@ -21,6 +24,9 @@ class Repository:
 
         self.mydb.commit()
 
+        context = Context(user_id=user, game=msg_game, user_message=messages)
+        await self.upsert_context(context)
+
         print(cursor.rowcount, "record inserted.")
 
     async def update_db_with_message_and_response(self, user_message, bot_response):
@@ -33,3 +39,23 @@ class Repository:
     async def update_db_with_message_with_response(self, user_message, message_with_response):
         await self.update_db_with_new_messages(user_message, message_with_response.intent, message_with_response.game,
                                                message_with_response.response_to_user)
+
+    async def get_context(self, user_id):
+        cursor = self.mydb.cursor()
+        sql = "SELECT * FROM context WHERE user_id = %s"
+        val = (user_id,)
+        cursor.execute(sql, val)
+        result = cursor.fetchone()
+        if result is None:
+            return None
+        else:
+            context = Context(result[0], result[1], result[2])
+            return context
+
+    async def upsert_context(self, new_context):
+        cursor = self.mydb.cursor()
+        sql = "INSERT INTO context (user_id, game, last_user_message) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE game=%s, last_user_message=%s"
+        val = (new_context.user_id, new_context.current_game, new_context.last_user_message, new_context.current_game, new_context.last_user_message)
+        cursor.execute(sql, val)
+        self.mydb.commit()
+
