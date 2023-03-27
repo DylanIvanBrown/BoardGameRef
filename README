@@ -34,3 +34,4 @@ You will need to provide your own keys/values for the following .env variables:
 
 ## General TODOs:
 - Unit tests for all classes
+- Intro message/description of bot in discord that highlights it's functionality
