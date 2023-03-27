@@ -23,6 +23,8 @@ You will need to provide your own keys/values for the following .env variables:
 - Custom open-source models that are trained on game rule books that are outside of the data set of Chat GPT-4.
 - Option to take pictures of game state or cards in a game to answer rules related to that.
 - Option to allow a user to upload their own rulebook for a game not in the training set. Store this and include it in future training of any custom model.
+- Include X previous user and assistant messages in the OpenAI call to allow users to query related to a previous message rather than just the game.
+- Add flow structure to detect some intents like ranking etc that we can get realtime data from BGG for rather than relying entirely on GPT-4
 
 ## Policies for contribution
 - Feel free to message me on discord if you want to chat about contribution. Dib#4182
