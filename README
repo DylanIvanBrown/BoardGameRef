@@ -1,7 +1,11 @@
-# Goals of Project
+# Board Game Rules Bot
+
+This project is designed to create a bot that can answer questions about
+
+## Goals of Project
 - Answer user questions about board game rules
 
-# What You Need to Know to Use This Project
+## What You Need to Know to Use This Project
 You will need to provide your own keys/values for the following .env variables:
 - OPEN_API_KEY
 - DB_PASSWORD
@@ -10,10 +14,21 @@ You will need to provide your own keys/values for the following .env variables:
 - DB_USER
 - DB_NAME
 
-# Development Decisions
-- Currently, we are hosting on SparkedHost, but I'm open to changing this.
+## Development Decisions
+- Currently, we are hosting on SparkedHost, but I'm open to changing this when needed for scale etc.
 
-# Feature Ideas
+## Feature Ideas
 - Once available, use OpenAI plugins tool to feed live data on BGG rankings, etc., from an API caller.
 - Bot game scoring from images once we have a model that can do that.
 - Custom open-source models that are trained on game rule books that are outside of the data set of Chat GPT-4.
+- Option to take pictures of game state or cards in a game to answer rules related to that.
+- Option to allow a user to upload their own rulebook for a game not in the training set. Store this and include it in future training of any custom model.
+
+## Policies for contribution
+- Feel free to message me on discord if you want to chat about contribution. Dib#4182
+- Feel free to open discussions here on GitHub too.
+- For branch naming please use <folder>/<description-of-work> where the folder is the type of work it is (like feature, bug etc) and the description denotes the work on the branch. Please keep it lowercase and use kebab casing so we can make sure it's OS independent.
+- Don't push to main
+
+## General TODOs:
+- Unit tests for all classes
