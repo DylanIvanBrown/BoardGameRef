@@ -18,8 +18,9 @@ class Repository:
         cursor = self.mydb.cursor()
         user = user_message.author.id
         messages = user_message.content
-        sql = "INSERT INTO messages (id, userId, intent, game, userMessage, botResponse) VALUES (%s, %s, %s, %s, %s, %s)"
-        val = (user_message.id, user, msg_intent, msg_game, messages, bot_message)
+        date_time = user_message.created_at
+        sql = "INSERT INTO messages (id, userId, intent, game, userMessage, botResponse, timeStamp) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        val = (user_message.id, user, msg_intent, msg_game, messages, bot_message, date_time)
         cursor.execute(sql, val)
 
         self.mydb.commit()
