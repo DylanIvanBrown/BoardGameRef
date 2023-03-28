@@ -23,7 +23,8 @@ class OpenAIAPICaller:
                                              "question is the game the user was asking about. For example: [Game Inquiry;Star wars "
                                              "deck-building game;Sorry, that game is not within my knowledge base, I'll ask my "
                                              "developers to teach me about it.] If no game is mentioned then still respond in the "
-                                             "desired format."}
+                                             "desired format. Whenever possible provide a reference for where in the "
+                                             "rulebook you could find the answer you are giving"}
 
         self.model = model
         self.system_prompt = system_prompt
