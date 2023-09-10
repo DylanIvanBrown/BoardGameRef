@@ -24,6 +24,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
+    print(message.content)
     open_ai_caller = OpenAIAPICaller()
     repo = Repository()
     question = message.content

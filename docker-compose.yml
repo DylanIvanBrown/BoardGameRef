@@ -1,0 +1,8 @@
+version: '3'
+services:
+  board_ref:
+    build: .
+    container_name: board-game-ref
+    command: python main.py
+    ports:
+      - "80:80"
