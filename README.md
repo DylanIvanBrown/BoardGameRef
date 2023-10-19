@@ -1,0 +1,38 @@
+# Board Game Rules Bot
+
+This project is designed to create a bot that can answer questions about board and card games
+
+## Goals of Project
+- Answer user questions about board game rules
+
+## What You Need to Know to Use This Project
+You will need to provide your own keys/values for the following .env variables:
+- OPEN_API_KEY
+- DB_PASSWORD
+- DISCORD_KEY
+- DB_HOST
+- DB_USER
+- DB_NAME
+
+## Development Decisions
+- Currently, I am are hosting on SparkedHost, but I'm open to changing this when needed for scale etc.
+
+## Feature Ideas
+- Once available, use OpenAI plugins tool to feed live data on BGG rankings, etc., from an API caller.
+- Bot game scoring from images once we have a model that can do that. LMMs perhaps?
+- Custom open-source models that are trained on game rule books that are outside of the data set of Chat GPT-4.
+- Option to take pictures of game state or cards in a game to answer rules related to that.
+- Option to allow a user to upload their own rulebook for a game not in the training set. Store this and include it in future training of any custom model.
+- Include X previous user and assistant messages in the OpenAI call to allow users to query related to a previous message rather than just the game.
+- Add flow structure to detect some intents like ranking etc that we can get realtime data from BGG for rather than relying entirely on GPT-4
+- Chain of thought reasoning approach for better rules application and possibly scoring
+
+## Policies for contribution
+- Feel free to message me on discord if you want to chat about contribution. Dib#4182
+- Feel free to open discussions here on GitHub too.
+- For branch naming please use <folder>/<description-of-work> where the folder is the type of work it is (like feature, bug etc) and the description denotes the work on the branch. Please keep it lowercase and use kebab casing so we can make sure it's OS independent.
+- Don't push to main
+
+## General TODOs:
+- Unit tests for all classes
+- Intro message/description of bot in discord that highlights it's functionality
